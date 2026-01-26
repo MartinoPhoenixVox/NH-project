@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.default.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/easyzoom.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -78,6 +79,107 @@
         <li class="breadcrumb-item active">Ready Player One</li>
     </ul>
 </div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6">
+      <section id="example">
+        <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
+          <a href="images/product-1.png">
+            <img src="images/product-1.png" alt="" width="100%">
+          </a>
+        </div>
+        <ul class="thumbnails">
+          <li>
+            <a href="images/product-2.png" data-standard="images/product-2.png">
+              <img src="images/product-2.png" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="images/product-3.png" data-standard="images/product-3.png">
+              <img src="images/product-3.png" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="images/product-4.png" data-standard="images/product-4.png">
+              <img src="images/product-4.png" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="images/product-5.png" data-standard="images/product-5.png">
+              <img src="images/product-5.png" alt="" />
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div class="col-lg-6">
+      <div class="pr-detail-content">
+        <ul class="pr-detail-rating">
+          <li><i class="fa-solid fa-star"></i></li>
+          <li><i class="fa-solid fa-star"></i></li>
+          <li><i class="fa-solid fa-star"></i></li>
+          <li><i class="fa-solid fa-star"></i></li>
+          <li><i class="fa-solid fa-star"></i></li>
+        </ul>
+        <h1>Ready Player One</h1>
+        <div class="pr-detail-price">
+          <p class="old-price">100.000VND</p>
+          <p class="new-price">70.000VND</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia accusamus enim corrupti velit doloribus delectus. Voluptas laboriosam sit eveniet totam consectetur odio debitis porro ducimus, deleniti veniam fugit quam cum?</p>
+        <div class="line-pr-detail"></div>
+        <div class="product-category">
+          <p>Thể loại: Khoa học viễn tưởng</p>
+          <p>Tags: Sách bán chạy, Bìa cứng, Trò chơi điện tử</p>
+        </div>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Tác phẩm
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item’s accordion body.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Tác giả
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item’s accordion body. Let’s imagine this being filled with some actual content.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Nhà xuất bản
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item’s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-detail">
+        <input type="number" class="soluong" placeholder="Nhập số lượng">
+        <button class="btn-dangky muangay">Mua ngay</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-12 section-title">
+    <h1>Sách điện tử</h1>
+</div>
+<div class="container sach-demo">
+  <iframe src="pdf/demo.pdf" width="100%" height="100%" style="border: none;">
+    Your browser does not support iframes. You can <a href="pdf/demo.pdf">download the PDF</a> file instead.
+  </iframe>
+</div>
 <footer class="bg-footer">
   <div class="container">
     <div class="row">
@@ -131,6 +233,38 @@
     <script src="Js/jquery-ui.min.js"></script>
     <script src="Js/bootstrap.bundle.min.js"></script>
     <script src="Js/owl.carousel.js"></script>
+    <script src="Js/easyzoom.js"></script>
     <script src="Js/script.js"></script>
+    <script>
+		// Instantiate EasyZoom instances
+		var $easyzoom = $('.easyzoom').easyZoom();
+
+		// Setup thumbnails example
+		var api1 = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
+
+		$('.thumbnails').on('click', 'a', function(e) {
+			var $this = $(this);
+
+			e.preventDefault();
+
+			// Use EasyZoom's `swap` method
+			api1.swap($this.data('standard'), $this.attr('href'));
+		});
+
+		// Setup toggles example
+		var api2 = $easyzoom.filter('.easyzoom--with-toggle').data('easyZoom');
+
+		$('.toggle').on('click', function() {
+			var $this = $(this);
+
+			if ($this.data("active") === true) {
+				$this.text("Switch on").data("active", false);
+				api2.teardown();
+			} else {
+				$this.text("Switch off").data("active", true);
+				api2._init();
+			}
+		});
+	</script>
 </body>
 </html>
